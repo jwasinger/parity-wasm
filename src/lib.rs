@@ -1,6 +1,8 @@
 //! WebAssembly format library
 #![warn(missing_docs)]
 
+#![feature(try_trait)]
+
 #![cfg_attr(not(feature = "std"), no_std)]
 #![cfg_attr(not(feature = "std"), feature(alloc))]
 

@@ -232,6 +232,13 @@ impl ::std::error::Error for Error {
 	}
 }
 
+#[cfg(feature = "std")]
+impl From<::std::option::NoneError> for Error {
+    fn from(err: ::std::option::NoneError) -> Self {
+        Error::Other("None Error")
+    }
+}
+
 impl From<io::Error> for Error {
 	fn from(err: io::Error) -> Self {
 		Error::HeapOther(format!("I/O Error: {:?}", err))
